@@ -1,2 +1,2 @@
-# TSN_JAVA_Net_Socket
-Пример клиент-серверной технологии на Socket в Java
+# TSN_JAVA_SOCKET_CHAT
+Пример клиент-серверной технологии (чата) на Socket в Java
