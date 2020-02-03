@@ -11,7 +11,7 @@ import java.util.Scanner;
  * Обеспечивает работу программы в режиме клиента
  *
  */
-public class Client {
+public class MyClient {
 
     private BufferedReader in;
     private PrintWriter out;
@@ -21,18 +21,20 @@ public class Client {
      * Запрашивает у пользователя ник и организовывает обмен сообщениями с
      * сервером
      */
-    public Client() {
+    public MyClient() {
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Введите IP для подключения к серверу.");
         System.out.println("Формат: xxx.xxx.xxx.xxx");
+        System.out.println("(локальный адрес: 127.0.0.1)");
+        System.out.println("для выхода из чата наберите 'exit'");
 
         String ip = scan.nextLine();
 
         try {
             // Подключаемся в серверу и получаем потоки(in и out) для передачи
             // сообщений
-            socket = new Socket(ip, Const.Port);
+            socket = new Socket(ip, Const.PORT);
             in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             out = new PrintWriter(socket.getOutputStream(), true);
 

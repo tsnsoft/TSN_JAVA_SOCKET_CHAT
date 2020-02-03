@@ -7,7 +7,7 @@ import java.util.Scanner;
  * Стартовая точка программы. Содержит единственный метод main
  *
  */
-public class TSN_JAVA_NET_SOCKET {
+public class Start {
 
     /**
      * Спрашивает пользователя о режиме работы (сервер или клиент) и передает
@@ -23,10 +23,12 @@ public class TSN_JAVA_NET_SOCKET {
             char answer = Character.toLowerCase(in.nextLine().charAt(0));
             switch (answer) {
                 case 's':
-                    new Server();
+                    System.out.println("Запуск сервера ...");
+                    new MyServer();
                     break;
                 case 'c':
-                    new Client();
+                    System.out.println("Запуск клиента ...");
+                    new MyClient();
                     break;
                 case 'q':
                     exit(0);
